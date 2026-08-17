@@ -1,8 +1,7 @@
-import { type CanvasMetrics, type Metrics, calculateMetrics, installFontFace, measureText } from "@/util"
-import type { LabelValue, Obj } from "@cjaye/utils"
-import { fetchAny, fetchJson, toUrlParams } from "@cjaye/utils"
+import { type CanvasMetrics, type Metrics, calculateMetrics, fetchAny, fetchJson, installFontFace, measureText, toUrlParams } from "@/util"
 import { useCallback, useRef, useState } from "react"
 import { FONT_TEST_CHARACTERS } from "@/const/strings"
+import type { Obj } from "@/types"
 import { opentypeMetrics } from "~/util/opentype"
 
 export interface FullMetrics {
@@ -18,8 +17,8 @@ export interface FullMetrics {
 
 export interface UseWebFontsOptions {
     onLoadOptions?: (options: {
-        familyOptions: LabelValue<string>[]
-        weightOptions: Obj<LabelValue<string>[]>
+        familyOptions: { label: string, value: string }[]
+        weightOptions: Obj<{ label: string, value: string }[]>
     }) => void
     onLoadMetrics?: (metrics: FullMetrics) => void
 }
@@ -30,8 +29,8 @@ export function useWebFonts(options?: UseWebFontsOptions) {
         onLoadMetrics,
     } = options ?? {}
 
-    const [familyOptions, setFamilyOptions] = useState<LabelValue<string>[]>([])
-    const [weightOptions, setWeightOptions] = useState<Obj<LabelValue<string>[]>>({})
+    const [familyOptions, setFamilyOptions] = useState<{ label: string, value: string }[]>([])
+    const [weightOptions, setWeightOptions] = useState<Obj<{ label: string, value: string }[]>>({})
     const [metrics, setMetrics] = useState<Obj<Obj<FullMetrics>>>({})
 
     const loadOptions = useCallback(async () => {
@@ -52,7 +51,7 @@ export function useWebFonts(options?: UseWebFontsOptions) {
                     .filter(y => parseInt(y).toString() === y)
                     .map(y => ({ label: y, value: `${x.files[y]}` }))
                 return v
-            }, {} as Obj<LabelValue<string>[]>)
+            }, {} as Obj<{ label: string, value: string }[]>)
 
         setFamilyOptions(familyOptions)
         setWeightOptions(weightOptions)

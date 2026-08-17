@@ -1,7 +1,7 @@
 import type { FontFaceConfig, FontMetricsConfig, FontTypeConfig } from "@/types/components"
 import type { CSSProperties } from "react"
 import type { Font } from "opentype.js"
-import { round } from "@cjaye/utils"
+import { round } from "./math"
 
 export interface CanvasMetrics {
     size: number

@@ -1,6 +1,7 @@
-import { type Obj, entriesOf } from "@cjaye/utils"
+import type { Obj } from "@/types/com.ts"
 import type { Tokens } from "../types/tokens.ts"
 import { buildScssMap } from "./scss.ts"
+import { entriesOf } from "./helpers.ts"
 
 export async function buildTokens(
     writeFile: (path: string, content: string) => Promise<unknown>,

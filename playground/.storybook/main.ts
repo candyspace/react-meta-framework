@@ -21,8 +21,8 @@ const config = defineMain({
         ...(process.env.npm_lifecycle_event === "dev:storybook"
             ? [import.meta.resolve("./localPreset.ts")]
             : [
-                "@cjaye/react-meta-framework/addons/state",
-                "@cjaye/react-meta-framework/addons/breakpoints",
+                "@candyspace/react-meta-framework/addons/state",
+                "@candyspace/react-meta-framework/addons/breakpoints",
             ]
         ),
     ],

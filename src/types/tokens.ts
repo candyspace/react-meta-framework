@@ -1,4 +1,4 @@
-import type { Obj } from "@cjaye/utils"
+import type { Obj } from "./com"
 
 export interface Aspect {
     ratio: string
