@@ -1,5 +1,4 @@
-/* eslint-disable import-x/no-nodejs-modules */
-
+// eslint-disable-next-line import-x/no-nodejs-modules
 import { resolve } from "path"
 
 export function previewAnnotations(entry = []) {

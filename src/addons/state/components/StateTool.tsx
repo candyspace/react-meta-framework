@@ -1,6 +1,6 @@
 import { type API, useGlobals } from "storybook/manager-api"
 import { DEFAULT_COMPONENT_STATE, STATE_ADDON_ID, STATE_TOOL_ID } from "@/const/state"
-import { entriesOf, keysOf } from "@cjaye/utils"
+import { entriesOf, keysOf } from "@/util"
 import { memo, useCallback, useEffect, useMemo } from "react"
 import { ButtonIcon } from "@storybook/icons"
 import type { ComponentState } from "@/types"

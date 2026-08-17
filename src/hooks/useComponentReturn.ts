@@ -1,5 +1,5 @@
-import type { ComponentState, UseComponentReturn } from "@/types"
-import { type Maybe, type Obj, deepMergeAll, keysOf } from "@cjaye/utils"
+import type { ComponentState, Maybe, Obj, UseComponentReturn } from "@/types"
+import { deepMergeAll, keysOf } from "@/util"
 import { useCallback, useRef } from "react"
 
 export default function useComponentReturn<S extends Obj<boolean | undefined> = ComponentState>() {

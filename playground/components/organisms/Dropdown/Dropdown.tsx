@@ -1,7 +1,7 @@
 import { DROPDOWN_STATE, type DropdownProps } from "./types"
 import { useComponent, useComponentReturn } from "@/hooks"
 import { useEffect, useState } from "react"
-import type { JSONPrimitive } from "@cjaye/utils"
+import type { JSONPrimitive } from "@/types"
 import classNames from "classnames"
 
 import DropdownList from "~/components/DropdownList"

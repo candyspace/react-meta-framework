@@ -1,7 +1,7 @@
 import { DROPDOWN_LIST_STATE, type DropdownListProps } from "./types"
-import type { JSONPrimitive, LabelValue } from "@cjaye/utils"
 import { type KeyboardEvent, useCallback, useEffect, useState } from "react"
 import { useComponent, useComponentReturn, useOptionsSearch } from "@/hooks"
+import type { JSONPrimitive } from "@/types"
 import classNames from "classnames"
 import { stringOrJson } from "@/util"
 
@@ -25,7 +25,7 @@ export const DropdownList = <T extends JSONPrimitive = JSONPrimitive>({
     const [selectedValue, setSelectedValue] = useState<T | null>(value)
     const [highlightedValue, setHighlightedValue] = useState<T | null>(value)
 
-    const onSelection = useCallback((value: LabelValue<T> | null) => {
+    const onSelection = useCallback((value: { label: string, value: T } | null) => {
         setHighlightedValue(value?.value ?? null)
         setSelectedValue(value?.value ?? null)
         _onSelection?.(value)

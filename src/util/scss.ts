@@ -1,5 +1,7 @@
-import { entriesOf, isObj, isString, kebabCase, toJson } from "@cjaye/utils"
-import type { Obj } from "@cjaye/utils"
+import { entriesOf, isObj, isString } from "./helpers"
+import type { Obj } from "@/types"
+import { kebabCase } from "./format"
+import { toJson } from "./parse"
 
 export function buildScssMap(obj: Obj, name = "", spaces = 4, indent = 0): string {
     const ind = " ".repeat((indent + 1) * spaces)

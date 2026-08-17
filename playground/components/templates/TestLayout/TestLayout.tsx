@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react"
 import type { TestLayoutProps } from "./types"
-import { arr } from "@cjaye/utils"
+import { arr } from "@/util"
 import classNames from "classnames"
 
 import scss from "./test-layout.module.scss"
