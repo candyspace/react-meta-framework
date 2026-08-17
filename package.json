@@ -33,7 +33,7 @@
         "prepublishOnly": "pnpx del-cli --force \"**/dist\" && pnpm run prepare:all && pnpm run build:bundle",
         "publish:verdaccio": "pnpm run dev:verdaccio & sleep 5 && verdaccio/init || true && verdaccio/login && pnpm publish --access public --tag latest --no-git-checks --registry http://localhost:30333",
         "publish:chromatic": "pnpx chromatic@latest --force-rebuild",
-        "publish:npm": "pnpm publish --access public --tag latest --no-git-checks --registry registry.npmjs.org"
+        "publish:npm": "pnpm publish --access public --tag latest --no-git-checks --registry npm.pkg.github.com"
     },
     "packageManager": "pnpm@11.21.0",
     "engines": {
