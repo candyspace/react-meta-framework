@@ -18,6 +18,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
+      - name: init npm
+        run: |
+          echo "@candyspace:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NPM_KEY}" >> .npmrc
 
       - name: pnpm
         uses: pnpm/action-setup@v6.0.2
