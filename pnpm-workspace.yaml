@@ -4,3 +4,5 @@ allowBuilds:
   '@swc/core': true
   esbuild: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@cjaye/react-meta-framework@2.0.4'
