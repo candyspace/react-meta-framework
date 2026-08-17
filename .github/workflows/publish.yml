@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     env:
-      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       WEBFONTS_API_KEY: ${{ secrets.WEBFONTS_API_KEY }}
       VERDACCIO_KEY: ${{ secrets.VERDACCIO_KEY }}
-      NPM_KEY: ${{ secrets.NPM_KEY }}
+      NPM_KEY: ${{ secrets.GITHUB_TOKEN }}
     steps:
 
       - name: checkout
@@ -50,7 +49,10 @@ jobs:
         run: pnpm run dev:verdaccio & sleep 3 && pnpm run publish:verdaccio
 
       - name: publish-init
-        run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }} \n >> ./.npmrc && cat ./.npmrc
+        run: |
+          echo "@candyspace:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NPM_KEY}" >> .npmrc
+          cat ./.npmrc
 
       - name: publish
         run: pnpm run publish:npm

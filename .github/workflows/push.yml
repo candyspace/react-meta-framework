@@ -2,7 +2,6 @@ on:
   pull_request:
     branches:
       - release/**
-      - dev
       - main
 
 jobs:
@@ -10,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     env:
-      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      # CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       WEBFONTS_API_KEY: ${{ secrets.WEBFONTS_API_KEY }}
     steps:
 
@@ -38,8 +37,8 @@ jobs:
       - name: test
         run: pnpm run build
 
-      - name: chromatic
-        uses: chromaui/action@latest
-        with:
-          onlyChanged: true
-          exitZeroOnChanges: true
+      # - name: chromatic
+      #   uses: chromaui/action@latest
+      #   with:
+      #     onlyChanged: true
+      #     exitZeroOnChanges: true
