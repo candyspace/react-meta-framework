@@ -23,6 +23,7 @@ export interface UseComponentReturn<S extends ComponentStatePartial = ComponentS
     refs: MutableRefObject<Obj<Maybe<HTMLElement | SVGElement>>>
     state: ComponentState<S>
     updateState: (patch: ComponentState<S>, key?: string) => void
+    updateStates: (patch: (key: string) => ComponentState<S>) => void
 }
 
 export interface UseComponentReturnReturn<S extends ComponentStatePartial = ComponentStateFull> {
