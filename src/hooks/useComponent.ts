@@ -1,7 +1,6 @@
 import { COMPONENT_STATE_ORDER, DEFAULT_COMPONENT_STATE } from "@/const/state"
-import type { ComponentState, ComponentStateFull, ComponentStatePartial, ComponentStateProps, UseComponentReturn } from "@/types"
-import { type JSONObject, type Maybe, type Mutable, type Obj, deepMerge, deepMergeAll, fromJson, isFunc, isIn, keysOf, wait } from "@cjaye/utils"
-import { filterObj, nextFocusable } from "@/util"
+import type { ComponentState, ComponentStateFull, ComponentStatePartial, ComponentStateProps, JSONObject, Maybe, Mutable, Obj, UseComponentReturn } from "@/types"
+import { deepMerge, deepMergeAll, filterObj, fromJson, isFunc, isIn, keysOf, nextFocusable, wait } from "@/util"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useSharedState } from "@/hooks"
 

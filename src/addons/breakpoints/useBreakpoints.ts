@@ -1,7 +1,7 @@
 import { type API, useGlobals, useParameter } from "storybook/manager-api"
 import { DEFAULT_METRICS, DEFAULT_VIEWPORT, VIEWPORTS, VIEWPORT_MAX_HEIGHT, VIEWPORT_MAX_WIDTH, VIEWPORT_MIN_HEIGHT, VIEWPORT_MIN_WIDTH } from "./defaults"
 import type { ViewportMap, ViewportParameters, ViewportState, ViewportStyles, ViewportType } from "./types"
-import { isString, valuesOf } from "@cjaye/utils"
+import { isString, valuesOf } from "@/util"
 import { useCallback, useEffect, useMemo } from "react"
 import { BREAKPOINT_PARAM_ID } from "@/const/state"
 

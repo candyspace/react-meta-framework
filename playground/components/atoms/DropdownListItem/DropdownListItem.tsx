@@ -1,5 +1,5 @@
 import { DROPDOWN_LIST_ITEM_STATE, type DropdownListItemProps } from "./types"
-import type { JSONPrimitive } from "@cjaye/utils"
+import type { JSONPrimitive } from "@/types"
 import classNames from "classnames"
 import { useComponent } from "@/hooks"
 import { useEffect } from "react"

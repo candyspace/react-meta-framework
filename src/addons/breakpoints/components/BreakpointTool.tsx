@@ -4,7 +4,7 @@ import { Dimensions, ViewportControls, ViewportDimensions, iconsMap } from "./at
 import type { DragSide, Viewport, ViewportMap, ViewportStyles } from "../types"
 import { GrowIcon, TransferIcon, UndoIcon } from "@storybook/icons"
 import { ThemeProvider, useTheme } from "storybook/theming"
-import { entriesOf, keysOf } from "@cjaye/utils"
+import { entriesOf, keysOf } from "@/util"
 import { extractMetrics, useBreakpoints } from "../useBreakpoints"
 import { memo, useCallback, useEffect, useMemo, useRef } from "react"
 import { type API } from "storybook/manager-api"

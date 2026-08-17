@@ -11,12 +11,18 @@ jobs:
     env:
       # CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       WEBFONTS_API_KEY: ${{ secrets.WEBFONTS_API_KEY }}
+      NPM_KEY: ${{ secrets.GITHUB_TOKEN }}
     steps:
 
       - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
+      - name: init npm
+        run: |
+          echo "@candyspace:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NPM_KEY}" >> .npmrc
 
       - name: pnpm
         uses: pnpm/action-setup@v6.0.2

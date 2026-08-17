@@ -1,4 +1,5 @@
-import { type Obj, deepMerge } from "@cjaye/utils"
+import type { Obj } from "@/types"
+import { deepMerge } from "@/util"
 
 const USE_SHARED_STATE = {
     data: {} as Obj,

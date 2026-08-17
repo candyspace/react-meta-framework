@@ -1,4 +1,5 @@
-import { type KeyOf, type Obj, entriesOf } from "@cjaye/utils"
+import type { KeyOf, Obj } from "@/types"
+import { entriesOf } from "./helpers"
 
 export function fromEntries<T extends Obj>(entries: [KeyOf<T>, T[KeyOf<T>]][]): T {
     return Object.fromEntries(entries) as T
