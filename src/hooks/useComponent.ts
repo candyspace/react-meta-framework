@@ -198,7 +198,7 @@ export default function useComponent<S extends ComponentStatePartial = Component
     }, [refresh])
 
     const updateStates = useCallback((patch: (key: string) => ComponentState<S>) => {
-        keysOf(refs.current).forEach(k => updateState(patch(k)))
+        keysOf(refs.current).forEach(k => updateState(patch(k), k))
     }, [updateState])
 
     const getRef = useCallback((node: HTMLElement | SVGElement | null, key = "default") => {
